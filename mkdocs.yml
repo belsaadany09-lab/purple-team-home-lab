@@ -1,0 +1,109 @@
+site_name: Purple Team Home Lab
+site_description: >-
+  A purple-team home lab portfolio — building a segmented enterprise network,
+  running attacks from the adversary's point of view, then detecting and
+  hardening against each one. Every technique is closed only when attack,
+  detection, and mitigation all exist.
+site_author: "Belal"
+site_url: https://belsaadany09-lab.github.io/purple-team-home-lab/
+
+repo_name: belsaadany09-lab/purple-team-home-lab
+repo_url: https://github.com/belsaadany09-lab/purple-team-home-lab
+edit_uri: ""
+
+theme:
+  name: material
+  language: en
+  palette:
+    # Dark is the default and the intended experience (loads first, always).
+    - scheme: slate
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+    - scheme: default
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+  font:
+    text: IBM Plex Sans
+    code: IBM Plex Mono
+  icon:
+    logo: material/shield-lock
+    repo: fontawesome/brands/github
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.caret
+  - pymdownx.tilde
+
+plugins:
+  - search
+
+extra:
+  generator: false
+
+nav:
+  - Home: index.md
+  - The build:
+      - "Part 1 · Stand up the lab": lab/stand-up.md
+      - "Part 2 · First attacks & detections": campaigns/mitm.md
+      - "Part 3 · Go deeper — access & movement": campaigns/go-deeper.md
+      - "Part 4 · Wireless & web": campaigns/wireless-web.md
+      - "Part 5 · Segment the network": lab/architecture.md
+      - "Part 6 · Build a routing core": lab/routing-core.md
+  - How it works:
+      - Methodology: methodology.md
+      - Detection engineering: detection.md
+  - Reference:
+      - Toolbox: tools.md
+      - "ATT&CK & OSINT field guide": reference/osint.md
+      - Reference tables: reference.md
+      - Challenges overcome: lessons.md
